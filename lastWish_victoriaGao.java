@@ -68,7 +68,7 @@ class lastWish_victoriaGao
 		pw.println ("2 AGL");
 		pw.println ("3 PRE");
 		invAdd ();
-		//invEdit ("0", 1);
+		invEdit ("0", 1);
 	    }
 	    if (specialty == 2)
 	    {
@@ -79,7 +79,7 @@ class lastWish_victoriaGao
 		pw.println ("3 INT");
 		pw.println ("5 AGL");
 		pw.println ("6 PRE");
-		//invEdit ("5", 1);
+		invEdit ("5", 1);
 	    }
 	    if (specialty == 3)
 	    {
@@ -90,7 +90,7 @@ class lastWish_victoriaGao
 		pw.println ("6 INT");
 		pw.println ("3 AGL");
 		pw.println ("2 PRE");
-		//invEdit ("10", 1);
+		invEdit ("10", 1);
 	    }
 	    if (specialty == 4)
 	    {
@@ -101,7 +101,7 @@ class lastWish_victoriaGao
 		pw.println ("3 INT");
 		pw.println ("6 AGL");
 		pw.println ("5 PRE");
-		//invEdit ("15", 1);
+		invEdit ("15", 1);
 	    }
 	    c.println ("Cupping your hands, you lift water to your mouth and struggle to stand up. \nA cloth bag leans against a nearby tree. \n1. Look in the bag.\n2. Leave it.");
 	    int bag = c.readInt ();
@@ -176,18 +176,18 @@ class lastWish_victoriaGao
 		double rand = roll (7);
 		if (rand == 1)
 		{
-		    sound = (int) roll (4);
-		    thing = (int) roll (5);
-		    c.println ("You stumble along what you think is a path. a loud" + noise [sound] + " can be heard from a nearby " + object [thing]);
+		    sound = (int) roll (3);
+		    thing = (int) roll (4);
+		    c.println ("You stumble along what you think is a path. A loud" + noise [sound] + " can be heard from a nearby " + object [thing]);
 		}
 		if (rand == 2)
 		{
-		    sound = (int) roll (4);
+		    sound = (int) roll (3);
 		    c.println ("A piercing " + noise [sound] + " gives you a mini heart-attack. You being to walk faster, hoping that you never meet whatever made that sound.");
 		}
 		if (rand == 3)
 		{
-		    thing = (int) roll (5);
+		    thing = (int) roll (4);
 		    c.println ("Something leaps at you from a " + object [thing]);
 		}
 		if (rand == 4)
@@ -205,15 +205,15 @@ class lastWish_victoriaGao
 		}
 		if (rand == 7)
 		{
-		    desc = (int) roll (4);
+		    desc = (int) roll (3);
 		    c.println ("You cross a " + adj [desc] + " bridge. It sways with each step, which is totally not scary...");
 		}
 	    }
 	    c.println ("There's a village up ahead. You can't remember much about it.");
 	    double vilType = roll (4);
 	    pw.close ();
-	    //village (vilType);
-	    //paths ();
+	    village (vilType);
+	    paths ();
 	}
 	catch (java.io.IOException e)
 	{
@@ -221,32 +221,75 @@ class lastWish_victoriaGao
     }
 
 
-    /*public static void paths ()
+    public static void paths ()
     {
+    Console c = new Console ("The Journey");
 	c.println ("Arc 2: The Journey");
     }
 
 
     public static void village (double vilType)
     {
+	int choose1;
 	if (vilType == 1)
 	{
 	    c.println ("As you get closer, the sounds of a blacksmith can be heard, loud metallic banging resonating through the air. You can buy equipment here.");
+	    c.println ("1. Shop\n2. Leave");
+	    choose1 = c.readInt ();
+	    if (choose1 == 1)
+	    {
+		c.clear();
+		
+	    }
+	    if (choose1 == 2)
+	    {
+
+	    }
 	}
 	if (vilType == 2)
 	{
 	    c.println ("The village is lively, the aroma of delectable food in the air. Merchants display their fresh produce in front of their stores. You can fill up on food here.");
+	    c.println ("1. Shop\n2. Leave");
+	    choose1 = c.readInt ();
+	    if (choose1 == 1)
+	    {
+
+	    }
+	    if (choose1 == 2)
+	    {
+
+	    }
 	}
 	if (vilType == 3)
 	{
 	    c.println ("There is magic all around you. Children run around chasing each other with flames in their hands. You can buy potions here.");
+	    c.println ("1. Shop\n2. Leave");
+	    choose1 = c.readInt ();
+	    if (choose1 == 1)
+	    {
+
+	    }
+	    if (choose1 == 2)
+	    {
+
+	    }
 	}
 	if (vilType == 4)
 	{
 	    c.println ("No one is here. Objects lay scatered around. Loot here is plentiful but so are the monsters.");
+	    c.println ("1. Shop\n2. Leave");
+	    choose1 = c.readInt ();
+	    if (choose1 == 1)
+	    {
+
+	    }
+	    if (choose1 == 2)
+	    {
+
+	    }
 	}
 	return;
-    }*/
+    }
 
 
     public static double roll (int face)
@@ -258,7 +301,7 @@ class lastWish_victoriaGao
 
     public static void critterFight (int num)
     {
-    
+	FileReader fr = new FileReader ("");
     }
 
 
@@ -267,6 +310,10 @@ class lastWish_victoriaGao
 
     }
 
+    public static void bossFight (int num)
+    {
+    
+    }
 
     public static void invAdd ()
     {
